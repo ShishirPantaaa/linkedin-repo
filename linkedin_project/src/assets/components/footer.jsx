@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Mail,
@@ -8,13 +8,42 @@ import {
   Instagram,
   Music2,
 } from "lucide-react";
-import WhiteLogo from './images/white logo.png'; // Adjust path as needed
+import WhiteLogo from "./images/white logo.png"; // Adjust path as needed
 
 const Footer = () => {
+  const [email, setEmail] = useState(""); // <-- state to store email
+
+  // Function to handle subscription
+  const handleSubscribe = async () => {
+    if (!email) {
+      alert("📧 Please enter a valid email.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("✅ Subscribed successfully!");
+        setEmail(""); // clear input
+      } else {
+        alert(`❌ ${data.error}`);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert("📛 Could not connect to server.");
+    }
+  };
+
   return (
     <footer className="bg-green-800 text-white px-6 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-        
         {/* Logo + Newsletter */}
         <div>
           <img src={WhiteLogo} alt="LinkedIn Logo" className="h-14 mb-4" />
@@ -22,21 +51,29 @@ const Footer = () => {
             APPROVED FROM MINISTRY OF EDUCATION, NEPAL GOVERNMENT
           </p>
 
+          {/* Newsletter form */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your Email here"
               className="px-4 py-2 rounded-md w-full sm:w-auto text-green-700 placeholder-green-600 bg-white focus:outline-none"
             />
-            <button className="bg-white text-green-900 px-4 py-2 rounded-md font-semibold hover:text-lime-300">
-              Suscribe
+            <button
+              onClick={handleSubscribe}
+              className="bg-white text-green-900 px-4 py-2 rounded-md font-semibold hover:text-lime-300"
+            >
+              Subscribe
             </button>
           </div>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="font-bold text-lg mb-2 border-b border-white w-fit">Quick Links</h3>
+          <h3 className="font-bold text-lg mb-2 border-b border-white w-fit">
+            Quick Links
+          </h3>
           <ul className="space-y-1">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
@@ -49,7 +86,9 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h3 className="font-bold text-lg mb-2 border-b border-white w-fit">Contact Us</h3>
+          <h3 className="font-bold text-lg mb-2 border-b border-white w-fit">
+            Contact Us
+          </h3>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
               <Phone size={18} />
@@ -57,30 +96,28 @@ const Footer = () => {
                 071-590108, 535494
               </a>
             </li>
-           <li className="flex items-center gap-2">
-  <Mail size={18} />
-  <a
-    href="https://mail.google.com/mail/?view=cm&to=info.linkedinconsultancy@gmail.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:underline"
-  >
-    info.linkedinconsultancy@gmail.com
-  </a>
-</li>
-
             <li className="flex items-center gap-2">
-  <MapPin size={18} />
-  <a
-    href="https://maps.app.goo.gl/WcmWLaBWyeQcTrTS8"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:underline"
-  >
-    Butwal-9 Milanchowk, Rupandehi
-  </a>
-</li>
-
+              <Mail size={18} />
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=info.linkedinconsultancy@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                info.linkedinconsultancy@gmail.com
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPin size={18} />
+              <a
+                href="https://maps.app.goo.gl/WcmWLaBWyeQcTrTS8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Butwal-9 Milanchowk, Rupandehi
+              </a>
+            </li>
           </ul>
 
           {/* Social Links */}

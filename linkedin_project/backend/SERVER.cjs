@@ -46,6 +46,29 @@ app.post("/api/contact", (req, res) => {
   });
 });
 
+app.post("/api/subscribe", (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ error: "Email is required" });
+  }
+
+  const sql = `INSERT INTO newsletter_subscribers (email) VALUES (?)`;
+
+  db.query(sql, [email], (err, result) => {
+    if (err) {
+      if (err.code === "ER_DUP_ENTRY") {
+        return res.status(409).json({ error: "Already subscribed" });
+      }
+      console.error("❌ DB Insert Error:", err);
+      return res.status(500).json({ error: "Database error" });
+    }
+
+    res.status(200).json({ message: "Subscribed successfully" });
+  });
+});
+
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });

@@ -11,8 +11,8 @@ import kamaladd from "./images/kamaladd.jpg"
 const teamMembers = [
   {
     id: 1,
-    name: "Kajal shrestha",
-    role: "Japanese counselor/Student Advisor",
+    name: "Kajal Shrestha",
+    role: "Japanese counselor",
     image: japConsilor,
     facebook: "https://www.facebook.com/share/1ACTuXJSt4/",
     instagram: "https://www.instagram.com/mr._buda?igsh=em9la3c1eWp2ZTd4",
@@ -20,8 +20,8 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Suzana Budha Magar",
-    role: "Accountant/counselor",
+    name: "Sujana Budha Magar",
+    role: "Accountant",
     image: AccImage,
     facebook: "https://www.facebook.com/share/1HWLPjdaZs/",
     instagram: "https://instagram.com/elena",
@@ -48,7 +48,7 @@ const teamMembers = [
   {
     id: 5,
     name: "Sushma Banjade",
-    role: "Document head/south korea counselor",
+    role: "Document officer",
     image: susmsmiss,
     facebook: "https://www.facebook.com/share/1AqU2oUGaG/",
     instagram: "https://instagram.com/",
@@ -57,7 +57,7 @@ const teamMembers = [
   {
     id: 6,
     name: "Bhumika Thapa Magar",
-    role: "Resepsionis /Student Advisor",
+    role: "Resepsionis ",
     image: RecImage,
     facebook: "https://www.facebook.com/share/16WwfFL2ma/",
     instagram: "https://instagram.com",
