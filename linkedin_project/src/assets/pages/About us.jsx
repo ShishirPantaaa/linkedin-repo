@@ -3,6 +3,7 @@ import Footer from '../components/footer';
 import SecLogo from './photo/secondary logo.jpg';
 import TeamSection from '../components/team';
 import SuccessStoriesSection from '../components/success';
+import TestimonialCard from '../components/testomonial';
 function About() {
   return (
     <div className="px-4 py-10">
@@ -31,6 +32,9 @@ function About() {
       </div>
         <TeamSection />
       <div >
+        <div className="mt-4 mb-4 ">
+        <TestimonialCard />
+        </div>
         <div className="">
          <SuccessStoriesSection/>
         </div>

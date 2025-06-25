@@ -7,28 +7,10 @@ import Graphicdes from "./images/Shishir.jpg";
 import japConsilor from "./images/Kajal.jpg";
 import insImage from "./images/languageInstructor.jpg";
 import susmsmiss from "./images/susmamiss.jpg"
-import kamaladd from "./images/kamaladd.jpg"
+import kamaladd from "./images/kamaladd1.png"
 const teamMembers = [
-  {
+    {
     id: 1,
-    name: "Kajal Shrestha",
-    role: "Japanese counselor",
-    image: japConsilor,
-    facebook: "https://www.facebook.com/share/1ACTuXJSt4/",
-    instagram: "https://www.instagram.com/mr._buda?igsh=em9la3c1eWp2ZTd4",
-    phone: "tel:+9779851235191",
-  },
-  {
-    id: 2,
-    name: "Sujana Budha Magar",
-    role: "Accountant",
-    image: AccImage,
-    facebook: "https://www.facebook.com/share/1HWLPjdaZs/",
-    instagram: "https://instagram.com/elena",
-    phone: "tel:+9779867268494",
-  },
-  {
-    id: 3,
     name: "Sagar Budha Magar",
     role: "Founder and CEO",
     image: CeoImage,
@@ -36,8 +18,9 @@ const teamMembers = [
     instagram: "https://www.instagram.com/mr._buda?igsh=em9la3c1eWp2ZTd4",
     phone: "tel:+9779851235191",
   },
+   
   {
-    id: 4,
+    id: 2,
     name: "Giriraj Sharma",
     role: "Language Instructor(About more than 15 years of experiences)",
     image: insImage,
@@ -45,6 +28,27 @@ const teamMembers = [
     instagram: "https://instagram.com/riya",
     phone: "tel:+9779800000004",
   },
+
+  {
+    id: 3,
+    name: "Kajal Nagarkoti",
+    role: "Japanese counselor",
+    image: japConsilor,
+    facebook: "https://www.facebook.com/share/1ACTuXJSt4/",
+    instagram: "https://www.instagram.com/mr._buda?igsh=em9la3c1eWp2ZTd4",
+    phone: "tel:+9779851235191",
+  },
+  {
+    id: 4,
+    name: "Sujana Budha Magar",
+    role: "Accountant",
+    image: AccImage,
+    facebook: "https://www.facebook.com/share/1HWLPjdaZs/",
+    instagram: "https://instagram.com/elena",
+    phone: "tel:+9779867268494",
+  },
+ 
+ 
   {
     id: 5,
     name: "Sushma Banjade",
