@@ -3,7 +3,7 @@ import { Facebook, Instagram, Phone } from "lucide-react";
 import CeoImage from "./images/sagar sir.jpg";
 import RecImage from "./images/bhumika.jpg";
 import AccImage from "./images/sujana.jpg";
-import Graphicdes from "./images/Shishir.jpg";
+import Graphicdes from "./images/shishir.JPG";
 import japConsilor from "./images/Kajal.jpg";
 import insImage from "./images/languageInstructor.jpg";
 import susmsmiss from "./images/susmamiss.jpg"
