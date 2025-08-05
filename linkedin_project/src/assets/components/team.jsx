@@ -21,7 +21,7 @@ const teamMembers = [
    
   {
     id: 2,
-    name: "Giriraj Sharma",
+    name: "Giriraj Pokhrel Sharma ",
     role: "Language Instructor(About more than 15 years of experiences)",
     image: insImage,
     facebook: "https://www.facebook.com/share/16WwfFL2ma/",
@@ -61,7 +61,7 @@ const teamMembers = [
   {
     id: 6,
     name: "Bhumika Thapa Magar",
-    role: "Resepsionis ",
+    role: "Receptionist ",
     image: RecImage,
     facebook: "https://www.facebook.com/share/16WwfFL2ma/",
     instagram: "https://instagram.com",
